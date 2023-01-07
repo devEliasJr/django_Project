@@ -1,0 +1,15 @@
+{% include 'recipes/parcials/head.html' %}
+
+
+<body>
+    {% include 'recipes/parcials/header.html' %}
+    {% include 'recipes/parcials/search.html' %}
+
+    <main class="main-content-container">
+        {% block content %}{% endblock content %}
+    </main>
+
+    {% include 'recipes/parcials/footer.html' %}
+</body>
+
+</html>
