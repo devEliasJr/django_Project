@@ -1,0 +1,9 @@
+{% extends 'global/base.html' %}
+
+{% block title %} Teste | {% endblock  %}
+
+{% block content %}
+{{ func.author.first_name }} {{ func.author.last_name }}
+    {{ func.preparation_time }}
+</div>
+{% endblock content %}

@@ -38,3 +38,9 @@ def recipe(request, id):
         'recipe': recipe,
         'is_detail_page': True,
     })
+
+
+def teste(request):
+    return render(request, 'recipes/pages/teste.html', context={
+        'func': make_recipe(),
+    })
