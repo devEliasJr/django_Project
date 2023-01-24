@@ -10,5 +10,5 @@ urlpatterns = [
     path('recipes/category/<int:category_id>/',
          views.category, name="category"),
     path('recipes/<int:id>/', views.recipe, name="recipe"),
-    path('teste', views.teste, name="teste"),
+    path('teste/<int:id>/', views.teste, name="teste"),
 ]

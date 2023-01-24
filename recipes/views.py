@@ -68,7 +68,8 @@ def search(request):
     })
 
 
-def teste(request):
+def teste(request, id):
+
     return render(request, 'recipes/pages/teste.html', context={
-        'func': make_recipe(),
+        'teste': make_recipe(),
     })

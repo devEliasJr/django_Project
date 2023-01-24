@@ -3,7 +3,14 @@
 {% block title %} Teste | {% endblock  %}
 
 {% block content %}
-{{ func.author.first_name }} {{ func.author.last_name }}
-    {{ func.preparation_time }}
-</div>
+    {{ teste.author.first_name }} {{ teste.author.last_name }}
+    {{ teste.preparation_time }} {{teste.id}}
+
+    <div class="center">
+        <a href="{% url 'recipes:teste' teste.id %}">
+            HERE
+        </a>
+    </div>
+    
+    
 {% endblock content %}
