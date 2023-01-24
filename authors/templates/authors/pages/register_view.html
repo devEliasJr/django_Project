@@ -4,46 +4,12 @@
 
 {% block content %}
     <div class="main-content center container">
-    <h2>Register {{ request.session.number }}</h2>
+    <h2>Cadastro de Usuários</h2>
     </div>
 
-    {% include 'recipes/parcials/message.html' %}
-
-    <div class="main-content center container">
-        <form action="{% url 'authors:create' %}" method="POST">
-            {% csrf_token %}
-            <div class="form-content form-content-grid">
-            {% for field in form %}
-                <div class="form-group">
-                    <label for="{{field.id_for_label}}">{{ field.label}}</label>
-                    {{ field }}
-
-                    {% if field.help_text %}
-                    <p class="help-text">{{ field.help_text }}</p>
-                    {% endif %}
-
-                    {{ field.errors }}
-                </div>
-            {% endfor %}
-            </div>
-
-            {% if form.errors %}
-                <div class="form-content form-content-grid">
-                    <div class="form-group">
-                    <div class="message message-error">
-                        O formulário contem erros, corrija-os e tente novamente!
-                    </div>
-                    </div>
-                </div>
-            {% endif %}
-
-            <div class="form-content form-content-grid">
-                <div class="form-group">
-                  <button type="submit">Send</button>
-                </div>
-            </div>
-        </form>
-    </div> 
+    {% include 'global/parcials/message.html' %}
+    {% include 'global/parcials/form.html' %}
+  
 {% endblock content %}
 
 

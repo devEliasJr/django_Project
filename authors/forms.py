@@ -42,13 +42,12 @@ class RegisterForm(forms.ModelForm):
         add_placeholder(self.fields['email'], 'Seu e-mail')
         add_placeholder(self.fields['first_name'], 'Ex.: Jose')
         add_placeholder(self.fields['last_name'], 'Ex.: Silva')
-        add_attr(self.fields['username'], 'css', 'a-css-class')
+        add_placeholder(self.fields['password'], 'Digite a sua senha')
+        add_placeholder(self.fields['password2'], 'Repita a sua senha')
 
     password = forms.CharField(
         required=True,
-        widget=forms.PasswordInput(attrs={
-            'placeholder': 'Digite a sua senha'
-        }),
+        widget=forms.PasswordInput(),
         error_messages={
             'required': 'A senha é um campo obrigatório'
         },
@@ -61,9 +60,7 @@ class RegisterForm(forms.ModelForm):
 
     password2 = forms.CharField(
         required=True,
-        widget=forms.PasswordInput(attrs={
-            'placeholder': 'Repita sua senha'
-        })
+        widget=forms.PasswordInput(),
     )
 
     class Meta:
@@ -95,6 +92,15 @@ class RegisterForm(forms.ModelForm):
                 'required': 'Esse campo é obrigatório.',
             }
         }
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email', '')
+        exists = User.objects.filter(email=email).exists()
+
+        if exists:
+            raise ValidationError('O email informado já está registrado')
+
+        return email
 
     def clean_password(self):
         data = self.cleaned_data.get('password')

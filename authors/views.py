@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.http import Http404
 from django.shortcuts import redirect, render  # noqa
+from django.urls import reverse
 
 from .forms import RegisterForm
 
@@ -9,7 +10,8 @@ def register_view(request):
     register_form_data = request.session.get('register_form_data', None)
     form = RegisterForm(register_form_data)
     return render(request, 'authors/pages/register_view.html', context={
-        'form': form
+        'form': form,
+        'form_action': reverse('authors:create'),
     })
 
 
@@ -22,7 +24,9 @@ def register_create(request):
     form = RegisterForm(request.POST)
 
     if form.is_valid():
-        form.save()
+        user = form.save(commit=False)
+        user.set_password(user.password)
+        user.save()
         messages.success(
             request, 'Cadastro realizado com sucesso, por favor efetue o login.')  # noqa
 
