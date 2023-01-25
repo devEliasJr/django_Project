@@ -1,4 +1,3 @@
-from django.contrib import messages
 from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import get_list_or_404, get_object_or_404, render  # noqa
@@ -12,10 +11,6 @@ def home(request):
     recipes = Recipe.objects.all().filter(
         is_published=True
     ).order_by('-id')
-
-    messages.success(request, 'Epa, você foi pesquisar algo que eu vi.')
-    messages.error(request, 'Epa, você foi pesquisar algo que eu vi.')
-    messages.warning(request, 'Epa, você foi pesquisar algo que eu vi.')
 
     return render(request, 'recipes/pages/home.html', context={
         'recipes': recipes,

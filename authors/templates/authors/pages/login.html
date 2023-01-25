@@ -1,0 +1,26 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Login | {% endblock title %}
+
+{% block content %}
+
+    <div class="main-content center container">
+    <h2>Efetuar login</h2>
+    </div>
+    {% include 'authors/parcials/login_message.html' %}
+    {% include 'global/parcials/message.html' %}
+
+    {% if not user.is_authenticated %}
+    {% include 'global/parcials/form.html' %}
+    {% else %}
+    <h4>
+        <div class="logout-text center">
+            <a href="{% url 'authors:dashboard' %}">Acessar Painel do Usuario</a>
+            </div>
+    </h4>
+        
+    {% endif %}
+
+{% endblock content %}
+
+

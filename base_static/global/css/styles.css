@@ -74,6 +74,18 @@ h6 {
     padding: var(--spacing-gutter-medium);
 }
 
+.logout-text {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 2rem;   
+}
+.logout-text a {
+    text-align: center;
+    color: var(--color-info-dark);
+    transition: all 300ms ease-in-out;
+    text-decoration: none;   
+}
+
 .main-header-container {
     background: var(--color-primary-dark);
 }
@@ -346,6 +358,20 @@ background: var(--color-primary-dark);
 color: var(--color-white);
 }
 
+.inline-form {
+    display: inline;
+}
+  
+.plaintext-button {
+display: inline;
+border: none;
+background: none;
+cursor: pointer;
+color: var(--color-primary);
+font-size: 1.6rem;
+}
+
+
 /* Messages */
 .messages-container {
     display: flex;
@@ -396,6 +422,23 @@ color: var(--color-white);
     background: var(--color-debug-light);
     color: var(--color-debug-dark);
 }
+
+/* Authors*/
+.authors-dashboard-container {
+    max-width: 64rem;
+    text-align: left;
+    padding: var(--spacing-gutter-medium);
+    margin: 0 auto;
+    
+  }
+  
+  .authors-dashboard-container h3,
+  .authors-dashboard-container p,
+  .authors-dashboard-container li,
+  .authors-dashboard-container ul {
+    list-style-type: none;
+    margin: 1rem 0;
+  }
 
 /* Generics */
 

@@ -1,0 +1,11 @@
+{% if request.user.is_authenticated %}
+
+<div class="logout-text center">
+    <h4>
+    Você está logado como {{ user.username }}.
+    Para fazer logout clique em <a href="{% url 'authors:logout' %}">Sair</a>
+    </h4>
+
+</div> 
+
+    {% endif %}
