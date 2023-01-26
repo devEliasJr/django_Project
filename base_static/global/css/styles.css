@@ -68,6 +68,14 @@ h6 {
     font-family: var(--font-headings);
 }
 
+img {
+    max-width: 100%;
+}
+
+a {
+    color: var(--color-debug-dark);
+    text-decoration: none;
+}
 .container {
     max-width: 120rem;
     margin: 0 auto;
@@ -338,38 +346,44 @@ list-style-type: none;
 color: var(--color-error-dark);
 }
 
-.form-content input {
-width: 100%;
-padding: 1rem;
-border-radius: 0.4rem;
-border: 1px solid var(--color-primary-dark);
-}
+.form-content input,
+.form-content textarea,
+.form-content select {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--color-primary-dark);
+    }
+
+.span-2 {
+    grid-column: span 2;
+    }
 
 .form-content-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-gap: calc(var(--spacing-gutter-medium) / 2) var(--spacing-gutter-medium);
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: calc(var(--spacing-gutter-medium) / 2) var(--spacing-gutter-medium);
+    }
 
 .form-content button {
-padding: 1rem 2rem;
-border: none;
-background: var(--color-primary-dark);
-color: var(--color-white);
-}
+    padding: 1rem 2rem;
+    border: none;
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+    }
 
 .inline-form {
     display: inline;
 }
   
 .plaintext-button {
-display: inline;
-border: none;
-background: none;
-cursor: pointer;
-color: var(--color-primary);
-font-size: 1.6rem;
-}
+    display: inline;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--color-primary);
+    font-size: 1.6rem;
+    }
 
 
 /* Messages */
@@ -435,6 +449,7 @@ font-size: 1.6rem;
   .authors-dashboard-container h3,
   .authors-dashboard-container p,
   .authors-dashboard-container li,
+  .authors-dashboard-container button,
   .authors-dashboard-container ul {
     list-style-type: none;
     margin: 1rem 0;

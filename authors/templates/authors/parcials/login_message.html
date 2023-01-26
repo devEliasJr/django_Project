@@ -3,7 +3,9 @@
 <div class="logout-text center">
     <h4>
     Você está logado como {{ user.username }}.
-    Para fazer logout clique em <a href="{% url 'authors:logout' %}">Sair</a>
+    <a href="{% url 'authors:dashboard' %}">Veja suas receitas</a>,
+    <a href="{% url 'authors:dashboard_recipe_new' %}">Crie uma nova</a> ou
+    faça logout clicando em <a href="{% url 'authors:logout' %}">Sair</a>
     </h4>
 
 </div> 

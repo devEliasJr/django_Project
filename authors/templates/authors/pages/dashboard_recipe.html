@@ -1,32 +1,17 @@
 {% extends 'global/base.html' %}
 
-{% block title %}Área logada ({{ user }}) | {% endblock title %}
+{% block title %}Área logada | Receitas | {% endblock title %}
 
 {% block content %}
 
     {% include 'global/parcials/message.html' %}
+    <div class="main-content center container">
+      <h2>Área logada | Receitas ({{ user }})</h2>
+      {% include 'authors/parcials/login_message.html' %}
 
-    <div class="main-content container">
-        <div class="center">
-            <h2>Painel do usuário ({{ user }})</h2>
-            {% include 'authors/parcials/login_message.html' %}
-        </div>
-    
-        <div class="authors-dashboard-container">
-            <h3>Your recipes</h3>
-            <ul>
-              {% for recipe in recipes %}
-                <li>
-                  <a href="#">{{ recipe.title }}</a>
-                </li>
-              {% empty %}
-                <li>
-                  <p>Você não receitas cadastradas, crie uma agora mesmo!.</p>
-                </li>
-              {% endfor %}
-            </ul>
-        </div>
-
+      <div class="left">
+        {% include 'global/parcials/form.html' %}
+      </div>
     </div>
  
 {% endblock content %}
